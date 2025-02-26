@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Ciana Deveau"
+title                    : ""
 title_separator          : "-"
 name                     : &name "Ciana Deveau"
 description              : &description "Neuroscience PhD Candidate"
@@ -59,7 +59,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : Ciana Deveau
+  linkedin         : "https://www.linkedin.com/in/ciana-deveau-394b46128/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -67,7 +67,7 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : # Username for X / Twitter
+  twitter          : "CianaDeveau"
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
@@ -247,15 +247,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
   # _publications
   - scope:
       path: ""
@@ -274,14 +265,6 @@ defaults:
       author_profile: true
       share: true
       comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
 
 
 # Sass/SCSS
