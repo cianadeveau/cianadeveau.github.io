@@ -1,7 +1,7 @@
 ---
 title: 'Blog Intro'
-date: 2025-10-01
-permalink: /posts/2025/10/blog-intro/
+date: 2025-09-29
+permalink: /posts/2025/09/blog-intro/
 tags:
 
 ---
