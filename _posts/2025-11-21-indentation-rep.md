@@ -39,7 +39,7 @@ Results
 <p>Indentations indicate where in a nested bit of code you are located, following an ordinal path as the indentations become longer. Therefore, indentations that are closer together in distance are typically closer together in the code, making an argument for those representations to potentially be more similar than indentations further apart. This is in fact the case, as the similarity between the representation of each indentation level is highest with its immediate neighbors and falls off with increased distance (Fig. 2). This produces a clear negative correlation between distance and similarity, following a linear trajectory (Fig. 2B). This is solely in layer 7 as that layer showed the lowest minimum cosine similarity, however this trend holds across many layers.  
 </p>
 
-<img src="/images/bp2/Fig2.png" alt="Figure 2">
+<img src="/images/bp2/Fig2.png" alt="Figure 2" width="75%" height="75%">
 <p>
 <em><b>Figure 2: Similarities between indentation representations are negatively correlated with difference in indentation length. </b> (A) Cosine similarity matrix for indentation levels one to ten in layer 7. Representations are more strongly correlated with their neighbor level and fall off as the distance increases. (B) Difference between each indentation level for a given pair of indentations plotted against their cosine similarity.  
 </em>
@@ -47,7 +47,7 @@ Results
 <p>Correlations between distance and similarity remain strongly negative across all of the layers in the model, so this ordered structure is maintained even in the later layers. Although the slopes of the linear fits follow along with the trends seen in the minimum cosine similarity plots with the largest slope in layer 7 and then it steadily decreases. While the correlations remain negative the spread of the differences in representations are largest in the earlier layers. 
 </p>
 
-<img src="/images/bp2/Fig3.png" alt="Figure 3" width="47%" height="47%">
+<img src="/images/bp2/Fig3.png" alt="Figure 3" width="75%" height="75%">
 <p>
 <em><b>Figure 3: Distance and similarity correlations across all layers. </b> (A) Measured correlations between each indentation pairs' distance and similarity at each layer. (B) The slope of the linear fit for this relationship across all layers.  
 </em>
