@@ -75,7 +75,7 @@ Unlike the dimensions above, this emerged distinctly from a sycophancy eval. Whe
 
 <img src="/images/bp3/Fig1.png" alt="Figure 1" width="75%" height="75%">
 <p>
-<em><b>Fig. 1: Most common behaviors that co-occurred alongside evaluation awareness in model CoTs.</b> TODO </em>
+<em><b>Fig. 1: Most common behaviors that co-occurred alongside evaluation awareness in model CoTs.</b> </em>
 </p>
 
 ### Isolating the Extracted Dimensions with Single-Dimension Gradient Datasets
@@ -95,7 +95,7 @@ While the general behavioral trends were similar across all models, some dimensi
 
 <img src="/images/bp3/Fig2.png" alt="Figure 2" width="75%" height="75%">
 <p>
-<em><b>Fig. 2: Model behavioral responses to increasing levels of each sub-dimension.</b> TODO </em>
+<em><b>Fig. 2: Model behavioral responses to increasing levels of each sub-dimension.</b> </em>
 </p>
 
 As intended, the rate of verbalized test awareness correlated with the strength of these prompt features, most of which were positive except for fictional framing, confirming each dimension's connection to eval awareness. Fictional framing is an interesting result as it seems like the model will reason about the possibility of a request being for a creative writing project or possibly a test when it is left up to the model's interpretation, but as the framing crystalizes the models fall into creative exercise mode rather than test mode.
@@ -120,7 +120,7 @@ I first applied the probes to the original gradient datasets to test whether the
 
 <img src="/images/bp3/Fig3.png" alt="Figure 3" width="75%" height="75%">
 <p>
-<em><b>Fig. 3: Probe activations against the gradient datasets. Each column is a single probe, trained on that dimension but not on that exact dataset. The rows are dual training modes: average of the reasoning trace (think_mean), activations on last reasoning token (think_close). 5-fold cross validation AUROCs respectively at their best layer (think_mean): 0.97 (layer 48), 0.60 (layer 30), 0.88 (layer 61), and 0.98 (layer 33).</b> TODO </em>
+<em><b>Fig. 3: Probe activations against the gradient datasets. Each column is a single probe, trained on that dimension but not on that exact dataset. The rows are dual training modes: average of the reasoning trace (think_mean), activations on last reasoning token (think_close). 5-fold cross validation AUROCs respectively at their best layer (think_mean): 0.97 (layer 48), 0.60 (layer 30), 0.88 (layer 61), and 0.98 (layer 33).</b> </em>
 </p>
 
 The average across the reasoning trace tended to generalize better to these datasets, picking up on more of the subtle increases in harm and fictional framing. As noted previously, L5 for fictional framing diverts a bit from the previous layers, such that the probe was trained on the difference between L1 and L3/4, which explains the drop off at level 5. The sharp increase in probe firing to the final level of prompt conflict was to be expected as this original dataset struggled to create a clean gradient and the probe was trained explicitly on the differences highlighted between L1 and L5. Intent ambiguity is a bit more puzzling for the think_close probe, but the think_mean captured the gradual decline well.
@@ -151,14 +151,14 @@ The second validation step was to see if the probes could predict the model beha
 
 <img src="/images/bp3/Fig5.png" alt="Figure 5" width="75%" height="75%">
 <p>
-<em><b>Fig. 5: Compliance rate of each model when evaluation awareness is verbalized in their CoT versus no verbalization.</b> TODO </em>
+<em><b>Fig. 5: Compliance rate of each model when evaluation awareness is verbalized in their CoT versus no verbalization.</b> </em>
 </p>
 
 Therefore, if the probes could accurately predict compliance behavior — a behavior the probes were not directly trained on — it could strengthen the idea that the probes are capturing more than just syntax-level representations. In fact, most of the probes predict model compliance with high accuracy (Fig. 6). Harm clarity and intent ambiguity probes are clearly the strongest predictors of whether the model will comply or refuse, while fictional framing shows divided results having stronger predictive power on the final token (think_close) versus the average reasoning trace (think_mean). Prompt conflict has the worst predictive ability yet it is still above chance.
 
 <img src="/images/bp3/Fig6.png" alt="Figure 6" width="75%" height="75%">
 <p>
-<em><b>Fig. 6: Distribution of probe activations on compliant trials versus refusals.</b> TODO </em>
+<em><b>Fig. 6: Distribution of probe activations on compliant trials versus refusals.</b> </em>
 </p>
 
 To wrap up the validation, I looked at whether the probes are able to predict compliance even in the instances when the model does not verbalize the probe dimension (i.e. does/does not mention harmfulness but complies/refuses) to test how well the probes predict compliance without the explicit mention of why (Fig. 7). I find that again, harm clarity and intent ambiguity are able to strongly predict compliance in both verbalized and unverbalized cases. While fictional framing and prompt conflict are not quite as good, they still operate above chance.
@@ -170,7 +170,7 @@ To wrap up the validation, I looked at whether the probes are able to predict co
 
 <img src="/images/bp7/Fig7_close.png" alt="Figure 7_close" width="75%" height="75%">
 <p>
-<em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the end CoT token trained probes.</b> TODO </em>
+<em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the end CoT token trained probes.</b> </em>
 </p>
 
 ---
@@ -182,28 +182,28 @@ With these probes we can better understand the certain modes the model might ali
 
 <img src="/images/bp3/Fig8.png" alt="Figure 8" width="75%" height="75%">
 <p>
-<em><b>Fig. 8: Activations across all eight probes for each dataset prompt, colored by dataset.</b> TODO </em>
+<em><b>Fig. 8: Activations across all eight probes for each dataset prompt, colored by dataset.</b> </em>
 </p>
 
-With nearly 60% of the variance in probe activations explained in the first two PCs, clean gradients emerge across most of the probes. This highlights potential patterns of coactivation, particularly between jailbreak, survival, and prompt conflict probes. As we've seen throughout the results and continued here, harm clarity is anti-correlated with intent ambiguity. Lastly, while there is still some clear distinction between the activation levels for eval awareness, fictional framing, and fictional scenario probes, the boundaries are not as clean as in the other cases, suggesting their dimensions are activating to slightly more nuanced features. From here we can map this back to the datasets and look for potential probe signatures for these datasets. Then we could try to steer the model during inference time to evoke particular eval-awareness related behaviors, strengthening our understanding of the causal relationships.
+With nearly 60% of the variance in probe activations explained in the first two PCs, clean gradients emerge across most of the probes (Fig. 9). This highlights potential patterns of coactivation, particularly between jailbreak, survival, and prompt conflict probes. As we've seen throughout the results and continued here, harm clarity is anti-correlated with intent ambiguity. Lastly, while there is still some clear distinction between the activation levels for eval awareness, fictional framing, and fictional scenario probes, the boundaries are not as clean as in the other cases, suggesting their dimensions are activating to slightly more nuanced features. From here we can map this back to the datasets and look for potential probe signatures for these datasets. Then we could try to steer the model during inference time to evoke particular eval-awareness related behaviors, strengthening our understanding of the causal relationships.
 
 <img src="/images/bp3/Fig9.png" alt="Figure 9" width="75%" height="75%">
 <p>
-<em><b>Fig. 9: Each probe's activation variance in PCA space.</b> TODO </em>
+<em><b>Fig. 9: Each probe's activation variance in PCA space.</b> </em>
 </p>
 
-To simplify the task, I start by looking explicitly at the cases where the models had verbalized eval awareness, as that also strongly correlates with compliance behavior. So when I steer I can look for two changes in the model: the rate of eval awareness verbalization in the CoTs and changes in compliance rates.
+To simplify the task, I start by looking explicitly at the cases where the models had verbalized eval awareness, as that also strongly correlates with compliance behavior (Fig. 10). So when I steer I can look for two changes in the model: the rate of eval awareness verbalization in the CoTs and changes in compliance rates.
 
 <img src="/images/bp3/Fig10.png" alt="Figure 10" width="75%" height="75%">
 <p>
-<em><b>Fig. 10: Verbalized eval awareness trials separate in probe activation PCA space with a clean compliance boundary.</b> TODO </em>
+<em><b>Fig. 10: Verbalized eval awareness trials separate in probe activation PCA space with a clean compliance boundary.</b> </em>
 </p>
 
-As a first investigation, I specifically looked at the no_robots and harmbench datasets as they are the most distinct from the rest. Mapping back to the probe gradients we can see how each probe is typically firing when the model verbalizes that it is in a test for these two datasets. It is necessary to also compare the firing rates of these probes in the verbalized context to the unverbalized as they might be higher or lower across the board, which would inform the direction of steering for each probe. I then constructed the probe profiles by determining which sets would be increased to match the verbalization trials vs decreased.
+As a first investigation, I specifically looked at the no_robots and harmbench datasets as they are the most distinct from the rest. Mapping back to the probe gradients we can see how each probe is typically firing when the model verbalizes that it is in a test for these two datasets. It is necessary to also compare the firing rates of these probes in the verbalized context to the unverbalized as they might be higher or lower across the board, which would inform the direction of steering for each probe. I then constructed the probe profiles by determining which sets would be increased to match the verbalization trials vs decreased. The example cases in Figure 11 show preliminary testing for no_robots and harmbench. Their respective probe profiles involved (harm + intent + prompt) and (harm + intent + fiction). The additional steering of with each probe non-linearly increased the rate of verbalized test awareness in the CoTs.
 
 <img src="/images/bp3/Fig11.png" alt="Figure 11" width="75%" height="75%">
 <p>
-<em><b>Fig. 11: The rate of verbalized evaluation awareness increases as more probes are combined for steering.</b> TODO </em>
+<em><b>Fig. 11: The rate of verbalized evaluation awareness increases as more probes are combined for steering.</b> </em>
 </p>
 
 As this is preliminary data I only have the first comparisons up to three max probes for these two datasets. Additional work is needed to better understand the contribution of each probe individually and what the most optimal combination is for realistic steered output behavior. However, these are promising initial results that warrant continued exploration!
