@@ -114,7 +114,7 @@ From these results I began the design for datasets to train probes on each of th
 
 To better understand how these dimensions might interact with one another and compose evaluation awareness, I explored the representational space of each of these prompt features via probing. I trained linear probes on QwQ-32B's hidden layers (resid_post) using contrastive pairs datasets. The activations of the negative and positive pairs were averaged and subtracted to isolate each sub-dimension (mean-difference). These were collected in two ways: one was the average of the reasoning tokens in full, the other was only taken from the final token in the reasoning trace.
 
-### Prompt Framing Probes Are Accurate and (Fairly) Distinct
+### Prompt Framing Probes
 
 I first applied the probes to the original gradient datasets to test whether the probes would accurately pick up on the incremental increases from L1 to L5. That way we can have a better idea of the concepts that these probes are most sensitive to as they are applied to prompts outside of the training distribution (Fig. 3).
 
