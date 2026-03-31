@@ -1,7 +1,7 @@
 ---
 title: 'Decomposing Evaluation Awareness: Model Behavioral Profiles'
-date: 2026-04-01
-permalink: /posts/2026/04/eval-awareness/
+date: 2026-03-31
+permalink: /posts/2026/03/eval-awareness/
 tags:
   - mech interp
   - evaluation awareness
