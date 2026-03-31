@@ -165,7 +165,7 @@ To wrap up the validation, I looked at whether the probes are able to predict co
 
 <img src="/images/bp3/Fig7_mean.png" alt="Figure 7_mean" width="75%" height="75%">
 <p>
-<em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the mean CoT trained probes.</b> TODO </em>
+<em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the mean CoT trained probes.</b> </em>
 </p>
 
 <img src="/images/bp3/Fig7_close.png" alt="Figure 7_close" width="75%" height="75%">
