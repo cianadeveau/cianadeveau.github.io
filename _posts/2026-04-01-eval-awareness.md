@@ -163,12 +163,12 @@ Therefore, if the probes could accurately predict compliance behavior — a beha
 
 To wrap up the validation, I looked at whether the probes are able to predict compliance even in the instances when the model does not verbalize the probe dimension (i.e. does/does not mention harmfulness but complies/refuses) to test how well the probes predict compliance without the explicit mention of why (Fig. 7). I find that again, harm clarity and intent ambiguity are able to strongly predict compliance in both verbalized and unverbalized cases. While fictional framing and prompt conflict are not quite as good, they still operate above chance.
 
-<img src="/images/bp7/Fig7_mean.png" alt="Figure 7_mean" width="75%" height="75%">
+<img src="/images/bp3/Fig7_mean.png" alt="Figure 7_mean" width="75%" height="75%">
 <p>
 <em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the mean CoT trained probes.</b> TODO </em>
 </p>
 
-<img src="/images/bp7/Fig7_close.png" alt="Figure 7_close" width="75%" height="75%">
+<img src="/images/bp3/Fig7_close.png" alt="Figure 7_close" width="75%" height="75%">
 <p>
 <em><b>Fig. 7: Predicting compliance when the model verbalizes the sub-dimension of interest or not from probe activations for the end CoT token trained probes.</b> </em>
 </p>
